@@ -1,0 +1,15 @@
+<h1>HEROES LIST:</h1>
+<ol class="heroes">
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero == selectedHero">
+        <span class="badge">ID:{{hero.id}}</span>
+        {{hero.name}}
+        <!--<div><span>Superpower:</span> {{hero.superpower}}</div>-->
+    </li>
+        <div *ngIf="selectedHero">
+            <h2>{{selectedHero.name}} Details</h2>
+            <label for="hero-name">Name: </label>
+            <input id="hero-name" [(ngModel)]="selectedHero.name" [(ngModel)]="selectedHero.name" placeholder="name">
+            <label for="hero-power">Power: </label>
+            <input id="hero-power" [(ngModel)]="selectedHero.superpower" placeholder="power">
+        </div>
+</ol>
