@@ -5,11 +5,5 @@
         {{hero.name}}
         <!--<div><span>Superpower:</span> {{hero.superpower}}</div>-->
     </li>
-        <div *ngIf="selectedHero">
-            <h2>{{selectedHero.name}} Details</h2>
-            <label for="hero-name">Name: </label>
-            <input id="hero-name" [(ngModel)]="selectedHero.name" [(ngModel)]="selectedHero.name" placeholder="name">
-            <label for="hero-power">Power: </label>
-            <input id="hero-power" [(ngModel)]="selectedHero.superpower" placeholder="power">
-        </div>
+        <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 </ol>
